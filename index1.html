@@ -1,0 +1,33 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <title>Car Image Upload</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>Upload Car Image</h1>-->
+<!--    <form action="/predict" method="post" enctype="multipart/form-data">-->
+<!--        <input type="file" name="image">-->
+<!--        <input type="submit" value="Predict">-->
+<!--    </form>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Image Upload</title>
+</head>
+<body>
+    <h1>Upload Car Image</h1>
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <input type="file" name="image">
+        <input type="submit" value="Predict">
+    </form>
+    <br>
+    {% if predicted_class %}
+        <h2>Predicted Class: {{ predicted_class }}</h2>
+        <img src={{ image_url }} alt="Detected Car" width="300">
+    {% endif %}
+</body>
+</html>
+
